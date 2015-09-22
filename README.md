@@ -1,7 +1,12 @@
-# my-docker-images
-Docker proof of concept files for wordpress and angularjs.
+# my-docker-images/wp-rest-api
+Basic WP install with the wp-rest-api plugin enabled.  This images includes the following plugins:
 
-Branches
-- wordpress - Docker files specific for simple wordpress images
-- data - Dockers files to create separate data volumes for MySQL and Mongo
-- wp-rest-api - Docker files to testing the WP rest API 
+
+Plugins:
+- WP Super Cache plugin
+- Raising upload limit
+- WP Mail SMTP
+- WP-REST-API version 2.0
+
+9/21/2015
+- Initially just includes the super cache plugin
