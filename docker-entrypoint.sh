@@ -160,4 +160,22 @@ $mysql->close();
 EOPHP
 fi
 
+echo > &2 'warning: Defining the dl_and_move_plugin function'
+dl_and_move_plugin() {
+  name="$1"
+  curl -O $(curl -i -s "https://wordpress.org/plugins/$name/" | egrep -o "https://downloads.wordpress.org/plugin/[^']+")
+unzip -o "$name".*.zip -d $(pwd)/wp-content/plugins
+
+}
+
+echo > &2 'warning: Adding wp-super-cache plugin'
+dl_and_move_plugin "wp-super-cache"
+
+echo > &2 'warning: Adding wp-mail-smtp'
+dl_and_move_plugin "wp-mail-smtp"
+
+echo > &2 'warning: Adding rest-api'
+#dl_and_move_plugin "rest-api.2.0-beta4"
+dl_and_move_plugin "rest-api"
+
 exec "$@"
